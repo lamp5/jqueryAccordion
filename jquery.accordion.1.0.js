@@ -17,7 +17,7 @@
 			var $elem = index;
 			var $child = $(this);
 			var $header = $child.find('> div:first');
-			var $body = $child.find('> div:last');
+			var $body = $child.find('> div:last').hide();
 			
 			var openAccordion = function(){
 				
