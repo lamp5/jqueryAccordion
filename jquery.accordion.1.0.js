@@ -13,7 +13,13 @@
 			
 		}, options);
 		
-		return this.find('> div').each(function(index){
+		return this.each(function(){
+
+			var $content = $(this);
+			var initialOpenAccordion;
+			
+			$content.find('> div').each(function(index){
+				
 			var $elem = index;
 			var $child = $(this);
 			var $header = $child.find('> div:first');
@@ -23,11 +29,11 @@
 				
 				if($child.hasClass('accordion-open')){
 					$child.removeClass('accordion-open');
-					$body.slideUp(options.animation);	
+					$body.stop().slideUp(options.animation);	
 				}
 				else{
 					$child.addClass('accordion-open');
-					$body.slideDown(options.animation);
+					$body.stop().slideDown(options.animation);
 					
 				}
 				
@@ -40,12 +46,16 @@
 				
 			};
 			
-			
 			$header.bind('click', openAccordion);
 			
 			if(options.autoOpen){
 				initialOpenAccordion();
 			}
+				
+				
+			});
+
+			
 			
 		});
 	
