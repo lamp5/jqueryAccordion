@@ -1,6 +1,28 @@
 # jqueryAccordion
 lightweight jQuery plugin to provide accordion effect  it is a early beta version.
 
+# Html structure
+
+```html
+<div class="your-content">
+	<div class="your-row">
+		<div class="head">
+		Accordion title
+		</div>
+		<div class="body">
+		Accordion body
+		</div>
+	</div>
+	<div class="your-row">
+		<div class="head">
+		Accordion title
+		</div>
+		<div class="body">
+		Accordion body
+		</div>
+	</div>
+</div>
+```
 
 # Initial
 
