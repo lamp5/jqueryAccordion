@@ -1,5 +1,5 @@
 /**
- * @author Szczepan
+ * @author Szczepan M.
  */
 
 
@@ -12,11 +12,11 @@
 			destroy: function(){
 				$this = $(this);
 				
-				var $child = $this.find('> div');
-				$child.removeClass('accordion-open');
-				$child.find('> div:last').show();
+				var $child = $this.removeClass('accordion-init').find('> div');
+				$child.removeClass('accordion-open accordion-row');
+				$child.find('> div:last').show().removeClass('accordion-body');
 				$child.unbind('mouseenter', 'mouseleave');
-				$child.find('> div:first').unbind('click');
+				$child.find('> div:first').unbind('click').removeClass('accordion-header');
 			}
 		};
 		
@@ -44,12 +44,12 @@
 
 			var $content = $(this);
 			
-			$content.find('> div').each(function(index){
+			$content.addClass('accordion-init').find('> div').each(function(index){
 				
 			var $elem = index;
-			var $child = $(this);
-			var $header = $child.find('> div:first');
-			var $body = $child.find('> div:last').hide();
+			var $child = $(this).addClass('accordion-row');
+			var $header = $child.find('> div:first').addClass('accordion-header');
+			var $body = $child.find('> div:last').hide().addClass('accordion-body');
 			
 			var openAccordion = function(){
 				
