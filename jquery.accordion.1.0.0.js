@@ -1,5 +1,5 @@
 /**
- * @author Szczepan M.
+ * @author Szczepan M.  Lamp5
  */
 
 
@@ -31,12 +31,13 @@
             else if(typeof options === 'object' || ! options){
 				
 				options = $.extend({
+				animation: 'fast',
 				autoOpen: true,
-				openChild: 1,
 				clickOpen: true,
 				hoverOpen: false,
-				openLast: false,
-				animation: 'fast'
+				onlyOneOpen: true,
+				openChild: 1,
+				openLast: false
 				
 					}, options);
 				
@@ -51,17 +52,24 @@
 			var $header = $child.find('> div:first').addClass('accordion-header');
 			var $body = $child.find('> div:last').hide().addClass('accordion-body');
 			
-			var openAccordion = function(){
+			var openAccordion = function(opt){
 				
 				if($child.hasClass('accordion-open')){
 					$child.removeClass('accordion-open');
 					$body.stop().slideUp(options.animation);	
 				}
 				else{
+					
+					if(opt){
+						$content.find('.accordion-row').removeClass('accordion-open');
+						$content.find('.accordion-body').slideUp(options.animation);
+						
+					}
 					$child.addClass('accordion-open');
 					$body.stop().slideDown(options.animation);
 					
 				}
+				
 				
 			};
 			
@@ -73,16 +81,20 @@
 			};
 			
 			if(options.clickOpen){
-				$header.bind('click', openAccordion);
+				$header.bind({
+					click: function(e){
+						openAccordion(options.onlyOneOpen);
+					}
+				});
 			}
 			
 			if(options.hoverOpen){
 				$child.bind({
 					mouseenter: function(e){
-						openAccordion();
+						openAccordion(false);
 					},
 					mouseleave: function(e){
-						openAccordion();
+						openAccordion(false);
 					}
 				});
 			}
