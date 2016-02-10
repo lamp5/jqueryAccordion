@@ -1,0 +1,35 @@
+
+
+
+.accordion-init .accordion-row{
+	margin-bottom: 10px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+
+.accordion-init h2,
+.accordion-init h3{
+	margin: 0;
+}
+
+
+.accordion-init .accordion-row .accordion-header{
+	cursor: pointer;
+	border-bottom: 1px solid black;
+	padding: 10px;
+	color: black;
+	font-weight: bold;
+	transition: all 0.2s ease-in;
+	-webkit-transition: all 0.2s ease-in;
+}
+
+.accordion-init .accordion-row.accordion-open .accordion-header{
+	background: black;
+	color: white;
+}
+
+
+.accordion-init .accordion-row .accordion-body{
+	padding: 10px;
+}
