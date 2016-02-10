@@ -3,7 +3,7 @@
 
 <title>Tutorial</title>
 <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="jquery.accordion.1.0.js"></script>
+<script src="jquery.accordion.1.0.0.js"></script>
 
 <script>
 	(function($){
@@ -12,8 +12,10 @@
 			$('.view-content').jqueryAccordion({
 				autoOpen: false,
 				animation: 200,
-				openChild: 3
+				openChild: 3,
+				openLast: false
 			});
+			
 		});
 		
 		
