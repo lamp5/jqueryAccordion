@@ -37,12 +37,15 @@
 				hoverOpen: false,
 				onlyOneOpen: true,
 				openChild: 1,
-				openLast: false
+				openLast: false,
+				mediaQuery: 0
 				
 					}, options);
 				
 			
 
+			if(options.mediaQuery == 0 || options.mediaQuery > $(window).width()){
+			
 			var $content = $(this);
 			
 			$content.addClass('accordion-init').find('> div').each(function(index){
@@ -111,6 +114,7 @@
 			});
 			
 			return;
+			}
 
 			}
 			else{
