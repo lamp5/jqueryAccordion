@@ -3,3 +3,5 @@
 ************************
 
 -10.02.2016 - jquery.accordion v1.0.0 - first release
+
+-06.04.2016 - jquery.accordion v1.0.1 - add mediaQuery option

@@ -40,6 +40,7 @@ hoverOpen: false,		//open on hover event, recomended to use clickOpen or hoverOp
 onlyOneOpen: true,		//when you open row, all open rows will be closed	
 openChild: 1, 			//number of row to be open
 openLast: false,		//open last row
+mediaQuery: 1024        // !beta! if window width is less than 1024px, accordion effect will be applied, use 0 to always apply - not add autoupdate function on window resize
 ```
 
 # Destroy
