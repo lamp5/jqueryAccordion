@@ -17,6 +17,34 @@
 				$child.find('> div:last').show().removeClass('accordion-body');
 				$child.unbind('mouseenter', 'mouseleave');
 				$child.find('> div:first').unbind('click').removeClass('accordion-header');
+			},
+			expandAll: function(){
+				
+				$this = $(this);
+				
+				var $child = $this.find('> div');
+
+				$child.each(function(){
+					var el = $(this);
+					if(!el.hasClass('accordion-open')){
+						el.find('> div:first').click();	
+					}
+					
+				});
+				
+			},
+			collapseAll: function(){
+				
+				$this = $(this);
+				var $child = $this.find('> div');
+
+				$child.each(function(){
+					var el = $(this);
+					if(el.hasClass('accordion-open')){
+						el.find('> div:first').click();	
+					}
+					
+				});
 			}
 		};
 		

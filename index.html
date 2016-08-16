@@ -15,7 +15,23 @@
 				animation: 200,
 				openChild: 3,
 				openLast: false,
-				mediaQuery: 0
+				mediaQuery: 0,
+				onlyOneOpen: false
+			});
+			
+			
+			$('a.expand').click(function(e){
+				e.preventDefault();
+				
+				$('.your-content').jqueryAccordion('expandAll');
+				
+			});
+			
+			$('a.collapse').click(function(e){
+				e.preventDefault();
+				
+				$('.your-content').jqueryAccordion('collapseAll');
+				
 			});
 		});
 		
@@ -27,7 +43,9 @@
 <body>
   
   <h1 id="page-title">jQuery.accordion v1.0.1</h1>
-    
+  
+  <a class="expand" href="#">Expand all</a>
+   <a class="collapse" href="#">Collapse all</a>
     <div class="your-content">
     	
 	    <div class="your-row">

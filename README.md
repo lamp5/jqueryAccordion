@@ -43,10 +43,13 @@ openLast: false,		//open last row
 mediaQuery: 1024        // !beta! if window width is less than 1024px, accordion effect will be applied, use 0 to always apply - not add autoupdate function on window resize
 ```
 
-# Destroy
+# Methods
 
 ```js
-$('.your-content').jqueryAccordion('destroy');
+$('.your-content').jqueryAccordion('expandAll'); //expand all rows - needed onlyOneOpen: false,  option to work
+$('.your-content').jqueryAccordion('collapseAll'); //collapse all rows - needed onlyOneOpen: false,  option to work
+$('.your-content').jqueryAccordion('destroy'); //destroy accordion
+
 ```
 
 # Roadmap
